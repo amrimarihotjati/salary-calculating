@@ -10,6 +10,7 @@ import {
   Text,
 
 } from '@chakra-ui/react'
+import { Player } from '@lottiefiles/react-lottie-player';
 
 function App() {
   //State / Variable
@@ -37,11 +38,18 @@ function App() {
   };
 
   return (
-    <Box background={'indigo'} padding={'20px'} display={'flex'} justifyContent={'center'}>
-        <Box display={'flex'} gap={'30px'}>
-          <Box display={'flex'} flexDirection={'column'} width={'350px'} color={'white'} gap={'20px'}>
+    <Box background={'indigo'} padding={'20px'} display={'flex'} justifyContent={'center'} flexWrap={'wrap'} w={'full'} >
+        <Box display={'flex'} gap={'30px'} flexWrap={'wrap'}>
+          <Box display={'flex'} flexDirection={'column'} width={'350px'} color={'white'} gap={'20px'} flexWrap={'wrap'} padding={'20px'}>
             <Heading my={'20px'}>Salary Calculating</Heading>
             <FormControl>
+            <Player
+              autoplay
+              loop
+              src="https://assets-v2.lottiefiles.com/a/797cd644-1175-11ee-b5eb-8f9bcdd58c1a/nMWLyfatKK.json"
+              style={{ height: '300px', width: '300px' }}
+            >
+            </Player>
               <FormLabel>Gaji Pokok</FormLabel>
               <Input
               color={'black'} 
@@ -75,7 +83,7 @@ function App() {
               <Button colorScheme='green' onClick={hitungGaji}>Hitung Gaji</Button>
             </Box>
           </Box>
-          <Box display={'flex'} flexDirection={'column'} width={'350px'} color={'white'} gap={'20px'}>
+          <Box display={'flex'} flexDirection={'column'} width={'350px'} color={'white'} gap={'20px'} background={'purple.600'} borderRadius={'10px'} padding={'20px'}>
             <Heading my={'20px'}>Hasil</Heading>
             <Box display={'flex'} gap={'10px'}>
               <Heading as={'h3'} fontSize={'md'}>Gaji Kotor: </Heading>
